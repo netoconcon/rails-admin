@@ -86,14 +86,14 @@ ActiveRecord::Schema.define(version: 2019_12_18_194628) do
   create_table "sales", force: :cascade do |t|
     t.bigint "client_id"
     t.date "sale_date"
-    t.bigint "user_id"
+    t.bigint "sale_id"
     t.bigint "discount_id"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_sales_on_client_id"
     t.index ["discount_id"], name: "index_sales_on_discount_id"
-    t.index ["user_id"], name: "index_sales_on_user_id"
+    t.index ["sale_id"], name: "index_sales_on_sale_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -126,5 +126,5 @@ ActiveRecord::Schema.define(version: 2019_12_18_194628) do
   add_foreign_key "product_quantities", "users"
   add_foreign_key "sales", "clients"
   add_foreign_key "sales", "discounts"
-  add_foreign_key "sales", "users"
+  add_foreign_key "sales", "sales"
 end
