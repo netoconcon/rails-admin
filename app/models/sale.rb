@@ -3,4 +3,5 @@ class Sale < ApplicationRecord
   belongs_to :user
   belongs_to :discount
   has_many :product_quantities
+  has_many :products, through: :product_quantities
 end
