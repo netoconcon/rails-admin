@@ -5,10 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
 
 # Criando nossos Users --- OBS: Depois que adicionarmos o devise precisamos incluir o email e senha dos users
 User.create name: 'José', status: :active, kind: :salesman, email: 'sale@teste.com', password: '123123'
+User.create name: 'José2', status: :active, kind: :salesman, email: 'sale2@teste.com', password: '123123'
 User.create name: 'Marcos', status: :active, kind: :manager, email: 'manager@teste.com', password: '123123'
 
 # Criando alguns produtos de exemplo
